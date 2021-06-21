@@ -1,0 +1,28 @@
+.main-card {
+    width: 350px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    &.day {
+        color: rgb(59, 59, 59);
+        background-color: rgb(191, 233, 250);
+    }
+    &.night {
+        background-color: black;
+    }
+    &.gray {
+        background-color: rgb(83, 83, 83);
+    }
+    &.dark-gray {
+        background-color: rgb(36, 36, 36);
+    }
+    header {
+        padding: 3em;
+        h1 {
+            width: fit-content;
+            margin: 0 auto;
+        }
+    }
+    .card-design {}
+}

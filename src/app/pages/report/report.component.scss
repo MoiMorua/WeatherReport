@@ -1,0 +1,11 @@
+.main-view {
+    /*Size*/
+    height: 100%;
+    /*Position*/
+    &.day {
+        background-color: rgb(255, 255, 255);
+    }
+    &.night {
+        background-color: #0e000e;
+    }
+}
