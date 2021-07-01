@@ -1,5 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-
+import { Component, ElementRef, Input, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import  {gsap} from 'gsap';
+import { RainComponent } from '../rain/rain.component';
+import { CloudComponent } from '../cloud/cloud.component';
 @Component({
   selector: 'app-weather-card',
   templateUrl: './weather-card.component.html',
@@ -13,40 +15,105 @@ export class WeatherCardComponent implements OnInit {
   @Input()
   weatherDescription:string;
 
+  @ViewChild("clouds")
+  cloudList: CloudComponent;
+
+  @ViewChildren(RainComponent)
+  rainDrops: QueryList<RainComponent>;
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  
+  ngAfterViewInit(): void {
+    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
+    console.log(this.rainDrops);        
+
+    this.animateClouds();
+    if(this.isWeatherReady()){
+      if(String(this.weather.weather[0].id).split('')[0] === '5'){
+        this.animateRain();
+      }
+    }
   }
 
   getSky():string{
-    if(!this.weather){
-      return 'day';
+    if(!this.isWeatherReady()){
+      return 'clear day';
     }
 
     const SKY_CONDITIONS = {
       /*THUNDERSTORM*/
-      2: ()=>{ return this.isDay()?'dark-gray':'night'},
+      2: ()=>{ return this.isDay()?'dark-clouds day':'dark-clouds night'},
       /*DRIZZLE*/
-      3: ()=>{ return this.isDay()?'gray':'night'},
+      3: ()=>{ return this.isDay()?'gray':'night'},      
       /* RAIN */
-      4: ()=>{ return this.isDay()?'gray':'night'},
+      500:()=>{ return this.isDay()?'day':'night'},
+      501:()=>{ return this.isDay()?'day':'night'},
+      502:()=>{ return this.isDay()?'day':'night'},
+      503:()=>{ return this.isDay()?'day':'night'},
+      504:()=>{ return this.isDay()?'day':'night'},
+      511:()=>{ return this.isDay()?'day':'night'},
+      520:()=>{ return this.isDay()?'day':'night'},
+      521:()=>{ return this.isDay()?'day':'night'},
+      522:()=>{ return this.isDay()?'day':'night'},
+      531:()=>{ return this.isDay()?'day':'night'},
       /* SNOW */
-      5:()=>{ return this.isDay()?'day':'night'},
-      /* ATMOSPHERE */
       6:()=>{ return this.isDay()?'day':'night'},
-      /* CLEAR */
+      /* ATMOSPHERE */
       7:()=>{ return this.isDay()?'day':'night'},
+      /* CLEAR */
+      800:()=>{ return this.isDay()?'clear day':'clear night'},
       /* CLOUDS */
-      8:()=>{ return this.isDay()?'gray':'night'},
-      DEFAULT:()=>{ return 'day'}
+      801:()=>{ return this.isDay()?'few-clouds day':'few-clouds night'},
+      802:()=>{ return this.isDay()?'few-clouds day':'few-clouds night'},
+      803:()=>{ return this.isDay()?'dark-clouds day':'dark-clouds night'},
+      804:()=>{ return this.isDay()?'dark-clouds day':'dark-clouds night'},
+    
+      DEFAULT:()=>{ return 'clear day'}
 
     };
 
-    return SKY_CONDITIONS[String(this.weather.weather[0].id).split('')[0]]() || SKY_CONDITIONS['DEFAULT']();
+    return SKY_CONDITIONS[String(this.weather.weather[0].id)]() || SKY_CONDITIONS['DEFAULT']();
     
   }
 
+  getClouds():string{
+
+    if(Object.keys(this.weather).length===0){
+      return 'clear';
+    }
+  
+    const SKY_CONDITIONS = {
+      /*THUNDERSTORM*/
+      2:'dark-clouds',
+      /*DRIZZLE*/
+      3:'clear',      
+      /* RAIN */
+      5:'few-clouds',
+      /* SNOW */
+      6:'clear',
+      /* ATMOSPHERE */
+      7:'clear',
+      /* CLEAR */
+      800:'clear',
+      /* CLOUDS */
+      801:'few-clouds',
+      802:'few-clouds',
+      803:'dark-clouds',
+      804:'dark-clouds',
+      DEFAULT:()=>{ return 'clear'}
+
+    };
+
+    return SKY_CONDITIONS[String(this.weather.weather[0].id)] || SKY_CONDITIONS['DEFAULT'];
+
+  }
+
   isDay():boolean{
+    if(Object.keys(this.weather).length===0){
+      return true;
+    }
     
     let dayTime = this.weather.dt;
     let sunRise = this.weather.sys.sunrise;
@@ -56,8 +123,56 @@ export class WeatherCardComponent implements OnInit {
     if(dayTime > sunRise && dayTime < sunSet){
       return true;
     }
-
+    
     return false;
+  }
+  
+  getDrops(){
+    if(!this.isWeatherReady()){
+      return 0;
+    }
+    const RAIN_CONDITIONS = {
+      500:15,
+      501:25,
+      502:50,
+      503:70,
+      504:70,      
+      520:50,
+      521:25,
+      522:30,
+      531:30
+    };
+    
+    return new Array( RAIN_CONDITIONS[String(this.weather.weather[0].id)] || 25);
+  }
+
+  animateClouds(){    
+    let clouds1 = Array.from(this.cloudList.cloudsGroup1.nativeElement.querySelectorAll('.cloud'));
+    let clouds2 = Array.from(this.cloudList.cloudsGroup2.nativeElement.querySelectorAll('.cloud'));
+    let clouds3 = Array.from(this.cloudList.cloudsGroup3.nativeElement.querySelectorAll('.cloud'));
+    let clouds4 = Array.from(this.cloudList.cloudsGroup4.nativeElement.querySelectorAll('.cloud'));
+    let clouds5 = Array.from(this.cloudList.cloudsGroup5.nativeElement.querySelectorAll('.cloud'));
+
+    let clouds = [...clouds1,...clouds2,...clouds3,...clouds4,...clouds5];
+
+    clouds.forEach((element:any) => {
+
+      gsap.to(element,{
+        duration: 25 + (Math.random() * 25),
+        x: -250,
+        yoyo: true,
+        repeat: -1
+      });
+    });
+      
+  }
+
+  animateRain(){
+  }
+
+
+  isWeatherReady():boolean{
+    return !(Object.keys(this.weather).length===0);    
   }
 
 
