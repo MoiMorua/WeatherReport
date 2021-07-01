@@ -2,10 +2,24 @@
     /*Size*/
     height: 100%;
     /*Position*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
     &.day {
         background-color: rgb(255, 255, 255);
     }
     &.night {
         background-color: #0e000e;
+    }
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        h2 {
+            display: flex;
+            align-self: center;
+            font-size: 2em;
+        }
     }
 }

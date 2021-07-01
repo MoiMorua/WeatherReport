@@ -1,11 +1,11 @@
 <aside class="main-card" [ngClass]="getSky()">
     <section class="card-design">
         <svg width="100%" height="100%" viewBox="0 0 500 600" xmlns:svg="http://www.w3.org/2000/svg" class="card-svg">                     
-                    <svg:g *ngIf="isDay()" app-sun [id]="'sun'"/>
-                    <svg:g *ngIf="!isDay()" app-moon [id]="'moon'"/>                            
-                    <svg:g #clouds app-cloud [skyType]="getClouds()" [cloudClass]="getSky()"/>                    
-                    
-                    <svg:g *ngFor="let index of getDrops(); let i = index;" app-rain [x]="(i===0?5:i) * (100/(getDrops().length)) + '%'" [y]="'-100'"></svg:g>
+                <svg:g *ngIf="isDay()" app-sun [id]="'sun'"/>
+                <svg:g *ngIf="!isDay()" app-moon [id]="'moon'"/>                            
+                <svg:g #clouds app-cloud [skyType]="getClouds()" [cloudClass]="getSky()"/>                    
+                
+                <svg:g *ngFor="let index of getDrops(); let i = index;" app-rain [x]="(i===0?5:i) * (100/(getDrops().length)) + '%'" [y]="'-100'"></svg:g>
         </svg>
     </section>
 </aside>

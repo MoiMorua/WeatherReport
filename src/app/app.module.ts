@@ -8,12 +8,20 @@ import { ReportComponent } from './pages/report/report.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TemperatureComponent } from './components/temperature/temperature.component';
 import { WeatherCardComponent } from './components/weather-card/weather-card.component';
+import { CloudComponent } from './components/cloud/cloud.component';
+import { SunComponent } from './components/sun/sun.component';
+import { MoonComponent } from './components/moon/moon.component';
+import { RainComponent } from './components/rain/rain.component';
 @NgModule({
   declarations: [
     AppComponent,
     ReportComponent,
     TemperatureComponent,
-    WeatherCardComponent
+    WeatherCardComponent,
+    CloudComponent,
+    SunComponent,
+    MoonComponent,
+    RainComponent
   ],
   imports: [
     BrowserModule,

@@ -2,8 +2,7 @@ import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { gsap } from 'gsap';
 @Component({
   selector: '[app-rain]',
-  template: `<svg:rect #drop [attr.x]="x" [attr.y]="y" height="25" width="5" fill="#0029B9">
-        <!-- <animate attributeType="XML" attributeName="y" from="-100" to="800" repeatCount="indefinite" dur=".5s" /> -->
+  template: `<svg:rect #drop [attr.x]="x" [attr.y]="y" height="25" width="5" fill="#0029B9">        
     </svg:rect>`,  
 })
 export class RainComponent implements OnInit {
@@ -36,7 +35,7 @@ export class RainComponent implements OnInit {
       delay: Math.random() * 3,
       // yoyo: true,
       repeat: -1,
-      ease: 'easeIn'
+      ease: 'ease'
     });
   }
 
