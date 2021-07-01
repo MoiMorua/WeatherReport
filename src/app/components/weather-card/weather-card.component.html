@@ -5,7 +5,7 @@
                     <svg:g *ngIf="!isDay()" app-moon [id]="'moon'"/>                            
                     <svg:g #clouds app-cloud [skyType]="getClouds()" [cloudClass]="getSky()"/>                    
                     
-                    <svg:g *ngFor="let index of getDrops(); let i = index;" app-rain [x]="i * (100/(getDrops().length)) + '%'" [y]="'-100'"></svg:g>
+                    <svg:g *ngFor="let index of getDrops(); let i = index;" app-rain [x]="(i===0?5:i) * (100/(getDrops().length)) + '%'" [y]="'-100'"></svg:g>
         </svg>
     </section>
 </aside>

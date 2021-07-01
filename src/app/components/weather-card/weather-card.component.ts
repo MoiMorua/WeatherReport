@@ -16,25 +16,16 @@ export class WeatherCardComponent implements OnInit {
   weatherDescription:string;
 
   @ViewChild("clouds")
-  cloudList: CloudComponent;
-
-  @ViewChildren(RainComponent)
-  rainDrops: QueryList<RainComponent>;
+  cloudList: CloudComponent;  
 
   constructor() { }
 
   ngOnInit(): void {}
   
   ngAfterViewInit(): void {
-    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
-    console.log(this.rainDrops);        
+    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.    
 
-    this.animateClouds();
-    if(this.isWeatherReady()){
-      if(String(this.weather.weather[0].id).split('')[0] === '5'){
-        this.animateRain();
-      }
-    }
+    this.animateClouds();    
   }
 
   getSky():string{
@@ -132,18 +123,17 @@ export class WeatherCardComponent implements OnInit {
       return 0;
     }
     const RAIN_CONDITIONS = {
-      500:15,
-      501:25,
-      502:50,
-      503:70,
-      504:70,      
-      520:50,
-      521:25,
-      522:30,
-      531:30
-    };
-    
-    return new Array( RAIN_CONDITIONS[String(this.weather.weather[0].id)] || 25);
+      500:5,
+      501:10,
+      502:20,
+      503:25,
+      504:25,      
+      520:25,
+      521:10,
+      522:25,
+      531:25
+    };    
+    return new Array( RAIN_CONDITIONS[String(this.weather.weather[0].id)] || 0);
   }
 
   animateClouds(){    
@@ -165,9 +155,6 @@ export class WeatherCardComponent implements OnInit {
       });
     });
       
-  }
-
-  animateRain(){
   }
 
 
