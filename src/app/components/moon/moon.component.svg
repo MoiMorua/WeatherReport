@@ -1,0 +1,4 @@
+<svg:circle cx="50%" cy="50%" r="125" fill="#FFF9EE"></svg:circle>
+<svg:circle class="moon-halo" cx="50%" cy="50%" r="250" fill="#FFF9EE" fill-opacity="0.05"></svg:circle>
+<svg:circle class="moon-halo" cx="50%" cy="50%" r="205" fill="#FFF9EE" fill-opacity="0.05"></svg:circle>
+<svg:circle class="moon-halo" cx="50%" cy="50%" r="175" fill="#FFF9EE" fill-opacity="0.05"></svg:circle>
