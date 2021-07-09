@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="200mm"
+   height="200mm"
+   viewBox="0 0 200 200"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="C:\Users\moi_3\Documents\MEGAsync\weatherReportMoiMorua\weatherReportMM\src\assets\logo.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.72337262"
+     inkscape:cx="147.91823"
+     inkscape:cy="385.00213"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <rect
+       x="716.09014"
+       y="562.64226"
+       width="637.29258"
+       height="351.133"
+       id="rect9890" />
+  </defs>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text9888"
+       style="line-height:1.25;font-family:'Modern No. 20';font-size:180px;-inkscape-font-specification:'Modern No. 20, ';white-space:pre;shape-inside:url(#rect9890)" />
+    <circle
+       style="fill:#ffca08;fill-opacity:0.729167;stroke-width:18;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       id="path11713"
+       cx="68.150024"
+       cy="72.029533"
+       r="35.820793" />
+    <path
+       id="path11126"
+       style="fill:#f4f4f4;stroke-width:18;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers;fill-opacity:1"
+       d="m 102.85761,51.609345 a 41.697044,41.697044 0 0 1 36.96622,22.467363 36.576351,36.576351 0 0 1 9.48572,-1.253154 36.576351,36.576351 0 0 1 36.57606,36.576576 36.576351,36.576351 0 0 1 -36.21019,36.56262 v 0.0134 h -0.36587 -96.378614 -2.377633 v -0.0889 A 32.004307,32.004307 0 0 1 20.926688,113.97194 32.004307,32.004307 0 0 1 52.930936,81.967699 32.004307,32.004307 0 0 1 62.360334,83.3888 41.697044,41.697044 0 0 1 102.85761,51.609345 Z" />
+    <rect
+       style="fill:#522efd;fill-opacity:0.653409;stroke-width:48.2728;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       id="rect12945"
+       width="5.5488825"
+       height="25.663584"
+       x="132.30402"
+       y="99.616165"
+       rx="2.7744412"
+       ry="2.7744412"
+       transform="rotate(26.178424)" />
+    <rect
+       style="fill:#522efd;fill-opacity:0.653409;stroke-width:48.2728;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       id="rect14225"
+       width="5.5488825"
+       height="25.663584"
+       x="147.73154"
+       y="92.032097"
+       rx="2.7744412"
+       ry="2.7744412"
+       transform="rotate(26.178424)" />
+    <rect
+       style="fill:#522efd;fill-opacity:0.653409;stroke-width:48.2728;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       id="rect14227"
+       width="5.5488825"
+       height="25.663584"
+       x="165.45679"
+       y="83.318489"
+       rx="2.7744412"
+       ry="2.7744412"
+       transform="rotate(26.178424)" />
+    <rect
+       style="fill:#522efd;fill-opacity:0.653409;stroke-width:48.2728;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       id="rect14229"
+       width="5.5488825"
+       height="25.663584"
+       x="180.88429"
+       y="75.734421"
+       rx="2.7744412"
+       ry="2.7744412"
+       transform="rotate(26.178424)" />
+  </g>
+</svg>
