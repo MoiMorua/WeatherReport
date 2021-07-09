@@ -134,7 +134,7 @@ export class WeatherCardComponent implements OnInit {
       522:25,
       531:25
     };    
-    return new Array( RAIN_CONDITIONS[String(this.weather.weather[0].id)] || 10);
+    return new Array( RAIN_CONDITIONS[String(this.weather.weather[0].id)] || 0);
   }
 
   animateClouds(){    

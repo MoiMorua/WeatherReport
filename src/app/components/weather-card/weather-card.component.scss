@@ -12,6 +12,12 @@ $height: 600px;
     border-radius: 15px;
     overflow: hidden;
     align-self: center;
+    @media (max-width: 865px) {
+        & {
+            max-width: 300px;
+            align-self: center;
+        }
+    }
     .card-svg {
         position: absolute;
     }
