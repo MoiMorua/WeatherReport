@@ -12,6 +12,7 @@ import { CloudComponent } from './components/cloud/cloud.component';
 import { SunComponent } from './components/sun/sun.component';
 import { MoonComponent } from './components/moon/moon.component';
 import { RainComponent } from './components/rain/rain.component';
+import { SnowComponent } from './components/snow/snow.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { RainComponent } from './components/rain/rain.component';
     CloudComponent,
     SunComponent,
     MoonComponent,
-    RainComponent
+    RainComponent,
+    SnowComponent
   ],
   imports: [
     BrowserModule,

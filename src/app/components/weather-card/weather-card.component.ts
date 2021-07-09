@@ -29,6 +29,7 @@ export class WeatherCardComponent implements OnInit {
   }
 
   getSky():string{
+
     if(!this.isWeatherReady()){
       return 'clear day';
     }
@@ -39,16 +40,16 @@ export class WeatherCardComponent implements OnInit {
       /*DRIZZLE*/
       3: ()=>{ return this.isDay()?'gray':'night'},      
       /* RAIN */
-      500:()=>{ return this.isDay()?'day':'night'},
-      501:()=>{ return this.isDay()?'day':'night'},
-      502:()=>{ return this.isDay()?'day':'night'},
-      503:()=>{ return this.isDay()?'day':'night'},
-      504:()=>{ return this.isDay()?'day':'night'},
-      511:()=>{ return this.isDay()?'day':'night'},
-      520:()=>{ return this.isDay()?'day':'night'},
-      521:()=>{ return this.isDay()?'day':'night'},
-      522:()=>{ return this.isDay()?'day':'night'},
-      531:()=>{ return this.isDay()?'day':'night'},
+      500:()=>{ return this.isDay()?'few-clouds day':'night'},
+      501:()=>{ return this.isDay()?'few-clouds day':'night'},
+      502:()=>{ return this.isDay()?'few-clouds day':'night'},
+      503:()=>{ return this.isDay()?'few-clouds day':'night'},
+      504:()=>{ return this.isDay()?'few-clouds day':'night'},
+      511:()=>{ return this.isDay()?'dark-clouds day':'night'},
+      520:()=>{ return this.isDay()?'dark-clouds day':'night'},
+      521:()=>{ return this.isDay()?'dark-clouds day':'night'},
+      522:()=>{ return this.isDay()?'dark-clouds day':'night'},
+      531:()=>{ return this.isDay()?'dark-clouds day':'night'},
       /* SNOW */
       6:()=>{ return this.isDay()?'day':'night'},
       /* ATMOSPHERE */
@@ -64,7 +65,7 @@ export class WeatherCardComponent implements OnInit {
       DEFAULT:()=>{ return 'clear day'}
 
     };
-
+    // return 'night';
     return SKY_CONDITIONS[String(this.weather.weather[0].id)]() || SKY_CONDITIONS['DEFAULT']();
     
   }
@@ -96,7 +97,7 @@ export class WeatherCardComponent implements OnInit {
       DEFAULT:()=>{ return 'clear'}
 
     };
-
+    
     return SKY_CONDITIONS[String(this.weather.weather[0].id)] || SKY_CONDITIONS['DEFAULT'];
 
   }
@@ -133,7 +134,7 @@ export class WeatherCardComponent implements OnInit {
       522:25,
       531:25
     };    
-    return new Array( RAIN_CONDITIONS[String(this.weather.weather[0].id)] || 0);
+    return new Array( RAIN_CONDITIONS[String(this.weather.weather[0].id)] || 10);
   }
 
   animateClouds(){    

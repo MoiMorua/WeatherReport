@@ -11,6 +11,9 @@
     }
     &.night {
         background-color: #0e000e;
+        h2{
+            color: white;
+        }
     }
     .main-content {
         display: flex;
