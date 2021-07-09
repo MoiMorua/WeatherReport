@@ -43,7 +43,19 @@ export class ReportComponent implements OnInit {
             
           }
         )
-        .catch(console.warn);
+        .catch(err =>{
+          //If user denies location setup the New York coords
+
+          console.warn(err);
+
+          this.location = { 
+            lat : 40.6643,
+            lng : -73.9385
+          }
+
+          this.getWeatherData();
+
+        });
       }
     }
 
