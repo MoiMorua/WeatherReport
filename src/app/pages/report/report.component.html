@@ -1,7 +1,0 @@
-<section class="main-view" [ngClass]="dayNight">
-    <div class="main-content">
-        <app-temperature [temperature]="getTemp()" [name]="weather.name" [dayNight]="isDayOrNight()"></app-temperature>
-        <h2>{{getWeatherDescription() | uppercase}}</h2>
-    </div>
-    <app-weather-card [weather]="weather" [weatherDescription]="getWeatherDescription()"></app-weather-card>
-</section>

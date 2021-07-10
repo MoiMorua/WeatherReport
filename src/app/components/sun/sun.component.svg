@@ -1,4 +1,0 @@
-<svg:circle cx="50%" cy="50%" r="125" fill="#FFA800"></svg:circle>
-<svg:circle class="sun-halo" cx="50%" cy="50%" r="250" fill="#ffaa005e" fill-opacity="0.25" ></svg:circle>
-<svg:circle class="sun-halo" cx="50%" cy="50%" r="205" fill="#ffaa005e" fill-opacity="0.25" ></svg:circle>
-<svg:circle class="sun-halo" cx="50%" cy="50%" r="175" fill="#ffaa005e" fill-opacity="0.25" ></svg:circle>
